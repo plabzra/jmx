@@ -1,0 +1,1 @@
+visualvm.exe --jdkhome "%JAVA_HOME%"
