@@ -23,9 +23,11 @@ public class DemoApplication {
 		LOG.debug("This is basic JMX tutorial");
 
 		try {
-			ObjectName objectName = new ObjectName("ch.m183.jmx.demo:type=basic,name=student");
+			ObjectName studentObjectName = new ObjectName("ch.m183.jmx.demo:type=basic,name=student");
+			ObjectName uuidObjectName = new ObjectName("ch.m183.jmx.demo:type=basic,name=node-identity");
 			MBeanServer server = ManagementFactory.getPlatformMBeanServer();
-			server.registerMBean(new Student(), objectName);
+			server.registerMBean(new Student(), studentObjectName);
+			server.registerMBean(new NodeIdentity(), uuidObjectName);
 		} catch (MalformedObjectNameException | InstanceAlreadyExistsException | MBeanRegistrationException | NotCompliantMBeanException e) {
 			e.printStackTrace();
 		}
