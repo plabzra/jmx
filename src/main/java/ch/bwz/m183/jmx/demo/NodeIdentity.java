@@ -5,10 +5,10 @@ import org.slf4j.LoggerFactory;
 
 import java.util.UUID;
 
-public class NodeIdentity  implements NodeIdentityMBean{
+public class NodeIdentity implements NodeIdentityMBean {
     private static final Logger LOG = LoggerFactory.getLogger(NodeIdentity.class);
 
-    private final static String UNIQUE_ID = UUID.randomUUID().toString();
+    private final String UNIQUE_ID = UUID.randomUUID().toString();
 
     @Override
     public String getUUID() {
